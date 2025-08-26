@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥 Duelo De Egos | El Rap de Blue Lock Que Tienes Que Escuchar</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #3730a3 100%);
+            position: relative;
+        }
+        
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .glow-text {
+            text-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 40px rgba(59, 130, 246, 0.6);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+        
+        .pulse-glow {
+            animation: pulseGlow 2s infinite;
+        }
+        
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
+            50% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.8); }
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .slide-in {
+            animation: slideIn 1s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1.5s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .neon-border {
+            border: 2px solid transparent;
+            background: linear-gradient(135deg, #1e3a8a, #3730a3) padding-box, 
+                        linear-gradient(135deg, #3b82f6, #8b5cf6) border-box;
+        }
+        
+        .stats-counter {
+            font-family: 'Orbitron', monospace;
+            font-weight: 700;
+        }
+        
+        .music-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: linear-gradient(135deg, #1e3a8a, #3730a3);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .music-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 30px rgba(59, 130, 246, 0.4);
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .section-divider {
+            height: 100px;
+            background: linear-gradient(to right, transparent, rgba(59, 130, 246, 0.3), transparent);
+            position: relative;
+        }
+        
+        .section-divider::before {
+            content: '⚽';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+            animation: spin 4s linear infinite;
+        }
+        
+        @keyframes spin {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        
+        .artist-card {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.1), rgba(55, 48, 163, 0.1));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #f59e0b, #f97316);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Background Music Control -->
+    <div class="music-btn" id="musicBtn" onclick="toggleMusic()">
+        <i class="fas fa-volume-up text-white text-xl" id="musicIcon"></i>
+    </div>
+    
+    <!-- Hidden audio element -->
+    <audio id="backgroundMusic" loop>
+        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBStjuOzmnmMcCUq/5cdxHAU7kdz4z3EhBSF8xunhj0UOB1ir5Ofpg1oUDB9xxv7akEILIWzL7OCLKwggbYTp8LNPFApc1P7GjTUJEiay2OOoLgggLG/G7OCLKwggenPX9J9CDAhQvf/CjTQJEyOx2uGqKwogKG3G7OpxHQUygtf4z3EhBSB+xebce0QJCD+0wfCkKwggKG3G7OpxHQUygtf4z3EhBSB+xebce0QJCD+0wfCkKwggKG3G7OpxHQUygtf4z3EhBSB+xebce0QJCD+0wfCkKwggKG3G7OpxHQUygtf4z3EhBSB+xebce0QJCD+0wfCkKwggKG3G7OpxHQUygtf4z3EhBSB+xebce0QJCD+0wfCkKwggKG3G7OpxHQUygtf4z3EhBSB+xebce0QJCD+0wfCkKwggKG3G7OpxHQUygtf4z3EhBSB+xebce0QJCD+0wfCkKwggKG3G7OpxHQUygtf4z3EhBSB+xebce0QJCD+0wfCkKwggKG3G7OpxHQUygtf4z3EhBSB+xebce0QJCD+0wfCkKwggKG3G7OpxHQUygtf4z3EhBSB+xebce0QJCD+0wfCkKwggKG3G7OpxHQUygtf4z3EhBSB+xebce0QJCD+0wfCkKwggKG3G7OpxHQUygtf4z3EhBSB+xebce0QJCD+0wfCkKwggKG3G7OpxHQUygtf4z3EhBSB+xebce0QJCD+0wfCkKwggKG3G7OpxHQUygtf4z3EhBSB+xebce0QJCD+0wfCkKwggKG3G7OpxHQUygtf4z3EhBSB+xebce0QJCD+0wfCkKwggKG3G7OpxHQUygtf4z3EhBSB+xebce0QJCD+0wfCkKwgg" type="audio/wav">
+    </audio>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center justify-center relative">
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="slide-in">
+                <h1 class="text-6xl md:text-8xl font-black mb-6 glow-text" style="font-family: 'Orbitron', sans-serif;">
+                    DUELO DE <span class="gradient-text">EGOS</span>
+                </h1>
+                <p class="text-2xl md:text-3xl mb-4 text-blue-300">
+                    Bastard München vs PXG
+                </p>
+                <p class="text-xl mb-8 text-gray-300">
+                    El rap más épico de Blue Lock que revolucionará tu playlist
+                </p>
+            </div>
+            
+            <div class="fade-in floating">
+                <button class="cta-button text-black font-bold py-4 px-8 rounded-full text-xl hover:scale-105 transition-transform duration-300 mb-8 pulse-glow">
+                    <i class="fas fa-play mr-3"></i>
+                    ¡ESCÚCHALO AHORA!
+                </button>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 fade-in">
+                <div class="neon-border rounded-lg p-6 card-hover">
+                    <div class="stats-counter text-3xl font-bold gradient-text">315K+</div>
+                    <p class="text-blue-300">Reproducciones</p>
+                </div>
+                <div class="neon-border rounded-lg p-6 card-hover">
+                    <div class="stats-counter text-3xl font-bold gradient-text">6.1K+</div>
+                    <p class="text-blue-300">Likes</p>
+                </div>
+                <div class="neon-border rounded-lg p-6 card-hover">
+                    <div class="stats-counter text-3xl font-bold gradient-text">11+</div>
+                    <p class="text-blue-300">Artistas</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Animated background elements -->
+        <div class="absolute top-20 left-10 text-6xl opacity-20 floating" style="animation-delay: 0.5s;">⚽</div>
+        <div class="absolute bottom-20 right-10 text-4xl opacity-20 floating" style="animation-delay: 1s;">🏆</div>
+        <div class="absolute top-1/3 right-20 text-5xl opacity-20 floating" style="animation-delay: 1.5s;">🔥</div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Why Listen Section -->
+    <section class="py-20 bg-gradient-to-b from-gray-900 to-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-bold text-center mb-16 gradient-text slide-in" style="font-family: 'Orbitron', sans-serif;">
+                ¿Por Qué Debes Escucharlo?
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="artist-card rounded-xl p-8 card-hover fade-in" style="animation-delay: 0.2s;">
+                    <div class="text-4xl mb-4 text-center">🎤</div>
+                    <h3 class="text-2xl font-bold mb-4 text-blue-300">Colaboración Épica</h3>
+                    <p class="text-gray-300">11 artistas de élite unidos en una sola canción. Luckster, Dexuz, Khai, Jhorzkov, Keyto, TerriM, Enuviz, Ashura, Ykato, Silence y Kenn crean magia musical.</p>
+                </div>
+                
+                <div class="artist-card rounded-xl p-8 card-hover fade-in" style="animation-delay: 0.4s;">
+                    <div class="text-4xl mb-4 text-center">⚽</div>
+                    <h3 class="text-2xl font-bold mb-4 text-blue-300">Temática Blue Lock</h3>
+                    <p class="text-gray-300">Sumérgete en el intenso duelo entre Bastard München y PXG. Cada verso captura la esencia competitiva y la pasión del anime más épico del fútbol.</p>
+                </div>
+                
+                <div class="artist-card rounded-xl p-8 card-hover fade-in" style="animation-delay: 0.6s;">
+                    <div class="text-4xl mb-4 text-center">🔥</div>
+                    <h3 class="text-2xl font-bold mb-4 text-blue-300">Producción de Lujo</h3>
+                    <p class="text-gray-300">Beat by ProdVTZ, Mix & Master by Kenn. Visuales espectaculares por Herickk, Kizuna, Sankito y más. Calidad profesional en cada detalle.</p>
+                </div>
+                
+                <div class="artist-card rounded-xl p-8 card-hover fade-in" style="animation-delay: 0.8s;">
+                    <div class="text-4xl mb-4 text-center">💯</div>
+                    <h3 class="text-2xl font-bold mb-4 text-blue-300">Viral en Redes</h3>
+                    <p class="text-gray-300">315K+ reproducciones y subiendo. La comunidad no para de hablar de esta obra maestra. Únete a la conversación.</p>
+                </div>
+                
+                <div class="artist-card rounded-xl p-8 card-hover fade-in" style="animation-delay: 1s;">
+                    <div class="text-4xl mb-4 text-center">🎵</div>
+                    <h3 class="text-2xl font-bold mb-4 text-blue-300">Letras Poderosas</h3>
+                    <p class="text-gray-300">Escritas por Dexuz & Silence, cada verso es una declaración de guerra lírica que te mantendrá enganchado de principio a fin.</p>
+                </div>
+                
+                <div class="artist-card rounded-xl p-8 card-hover fade-in" style="animation-delay: 1.2s;">
+                    <div class="text-4xl mb-4 text-center">⚡</div>
+                    <h3 class="text-2xl font-bold mb-4 text-blue-300">Energía Pura</h3>
+                    <p class="text-gray-300">5 minutos y 38 segundos de adrenalina pura. Perfect para entrenar, estudiar o cuando necesites esa motivación extra.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- About Section -->
+    <section class="py-20 bg-gradient-to-b from-gray-800 to-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-5xl font-bold mb-12 gradient-text slide-in" style="font-family: 'Orbitron', sans-serif;">
+                    Una Obra Maestra Musical
+                </h2>
+                
+                <div class="artist-card rounded-xl p-12 mb-12 fade-in">
+                    <p class="text-xl leading-relaxed text-gray-300 mb-8">
+                        <span class="text-2xl font-bold text-blue-400">"Duelo De Egos"</span> no es solo una canción, es una experiencia. 
+                        Inspirado en el intenso enfrentamiento entre <span class="text-yellow-400 font-semibold">Bastard München</span> 
+                        y <span class="text-purple-400 font-semibold">PXG</span> de Blue Lock, este rap captura toda la intensidad, 
+                        competitividad y egos que chocan en el campo de batalla del fútbol más despiadado.
+                    </p>
+                    
+                    <p class="text-lg text-gray-400 mb-8">
+                        Cada artista representa a un jugador diferente, creando una narrativa única donde las personalidades 
+                        se enfrentan a través de versos cargados de técnica, flow y pasión. La producción de 
+                        <span class="text-blue-400 font-semibold">ProdVTZ</span> complementa perfectamente la intensidad de las voces, 
+                        mientras que los visuales transportan directamente al universo de Blue Lock.
+                    </p>
+                    
+                    <div class="flex flex-wrap justify-center gap-4 text-sm">
+                        <span class="bg-blue-600 px-3 py-1 rounded-full">Rap</span>
+                        <span class="bg-purple-600 px-3 py-1 rounded-full">Anime</span>
+                        <span class="bg-yellow-600 px-3 py-1 rounded-full">Blue Lock</span>
+                        <span class="bg-green-600 px-3 py-1 rounded-full">Colaboración</span>
+                        <span class="bg-red-600 px-3 py-1 rounded-full">Épico</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artists Section -->
+    <section class="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-bold text-center mb-16 gradient-text slide-in" style="font-family: 'Orbitron', sans-serif;">
+                Los Artistas Detrás de la Magia
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <div class="artist-card rounded-xl p-6 text-center card-hover fade-in">
+                    <div class="text-3xl mb-3">🎤</div>
+                    <h4 class="text-lg font-bold text-blue-300 mb-2">Voces</h4>
+                    <p class="text-sm text-gray-400">Luckster, Dexuz, Khai, Jhorzkov, Keyto, TerriM, Enuviz, Ashura, Ykato, Silence, Kenn</p>
+                </div>
+                <div class="artist-card rounded-xl p-6 text-center card-hover fade-in" style="animation-delay: 0.2s;">
+                    <div class="text-3xl mb-3">✍️</div>
+                    <h4 class="text-lg font-bold text-blue-300 mb-2">Letra</h4>
+                    <p class="text-sm text-gray-400">Dexuz & Silence</p>
+                </div>
+                <div class="artist-card rounded-xl p-6 text-center card-hover fade-in" style="animation-delay: 0.4s;">
+                    <div class="text-3xl mb-3">🎵</div>
+                    <h4 class="text-lg font-bold text-blue-300 mb-2">Producción</h4>
+                    <p class="text-sm text-gray-400">Beat: ProdVTZ<br>Mix & Master: Kenn</p>
+                </div>
+                <div class="artist-card rounded-xl p-6 text-center card-hover fade-in" style="animation-delay: 0.6s;">
+                    <div class="text-3xl mb-3">🎨</div>
+                    <h4 class="text-lg font-bold text-blue-300 mb-2">Visuales</h4>
+                    <p class="text-sm text-gray-400">Herickk, Kizuna, Sankito, Alfred, Rutra, Ghost, Skyvviz</p>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <p class="text-xl text-blue-300 mb-4">Presentado por</p>
+                <h3 class="text-3xl font-bold gradient-text" style="font-family: 'Orbitron', sans-serif;">
+                    LA ALIANZA
+                </h3>
+                <p class="text-gray-400 mt-2">La unión que revoluciona el rap en español</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-bold text-center mb-16 gradient-text slide-in" style="font-family: 'Orbitron', sans-serif;">
+                Experiencia Completa
+            </h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="video-container mb-8 fade-in">
+                    <iframe 
+                        src="https://www.youtube.com/embed/DGipNcqlqPc?autoplay=0&rel=0&showinfo=0" 
+                        title="Duelo De Egos | Bastard Munchen Vs PXG (Blue Lock) Dexuz"
+                        frameborder="0" 
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                
+                <div class="text-center">
+                    <a href="https://youtu.be/DGipNcqlqPc" target="_blank" 
+                       class="inline-block cta-button text-black font-bold py-4 px-8 rounded-full text-xl hover:scale-105 transition-transform duration-300 pulse-glow">
+                        <i class="fab fa-youtube mr-3"></i>
+                        Ver en YouTube
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-20 hero-bg relative">
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h2 class="text-6xl font-bold mb-8 glow-text slide-in" style="font-family: 'Orbitron', sans-serif;">
+                ¿Estás Listo?
+            </h2>
+            <p class="text-2xl mb-12 text-blue-300 fade-in">
+                Únete a los 315K+ fans que ya viven la experiencia
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center fade-in">
+                <a href="https://youtu.be/DGipNcqlqPc" target="_blank" 
+                   class="cta-button text-black font-bold py-4 px-8 rounded-full text-xl hover:scale-105 transition-transform duration-300 pulse-glow">
+                    <i class="fas fa-play mr-3"></i>
+                    ¡ESCÚCHALO YA!
+                </a>
+                
+                <button onclick="shareContent()" 
+                        class="bg-transparent border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-black font-bold py-4 px-8 rounded-full text-xl transition-all duration-300">
+                    <i class="fas fa-share-alt mr-3"></i>
+                    Compartir
+                </button>
+            </div>
+            
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-2xl mx-auto">
+                <div class="text-center">
+                    <div class="stats-counter text-2xl font-bold gradient-text">315K+</div>
+                    <p class="text-sm text-blue-300">Vistas</p>
+                </div>
+                <div class="text-center">
+                    <div class="stats-counter text-2xl font-bold gradient-text">6.1K+</div>
+                    <p class="text-sm text-blue-300">Likes</p>
+                </div>
+                <div class="text-center">
+                    <div class="stats-counter text-2xl font-bold gradient-text">516</div>
+                    <p class="text-sm text-blue-300">Comentarios</p>
+                </div>
+                <div class="text-center">
+                    <div class="stats-counter text-2xl font-bold gradient-text">5:38</div>
+                    <p class="text-sm text-blue-300">Duración</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-500">
+                © 2024 Duelo De Egos - Dexuz & La Alianza | 
+                <a href="https://youtu.be/DGipNcqlqPc" target="_blank" class="text-blue-400 hover:text-blue-300">
+                    Blue Lock Rap Épico
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        let musicPlaying = false;
+        const backgroundMusic = document.getElementById('backgroundMusic');
+        const musicIcon = document.getElementById('musicIcon');
+        
+        function toggleMusic() {
+            if (musicPlaying) {
+                backgroundMusic.pause();
+                musicIcon.className = 'fas fa-volume-mute text-white text-xl';
+                musicPlaying = false;
+            } else {
+                backgroundMusic.play().catch(e => {
+                    console.log('Autoplay prevented:', e);
+                });
+                musicIcon.className = 'fas fa-volume-up text-white text-xl';
+                musicPlaying = true;
+            }
+        }
+        
+        function shareContent() {
+            if (navigator.share) {
+                navigator.share({
+                    title: '🔥 Duelo De Egos | El Rap de Blue Lock Que Tienes Que Escuchar',
+                    text: 'Descubre el rap más épico de Blue Lock: Bastard München vs PXG por Dexuz y La Alianza. ¡315K+ reproducciones!',
+                    url: 'https://youtu.be/DGipNcqlqPc'
+                });
+            } else {
+                // Fallback para navegadores sin Web Share API
+                const url = 'https://youtu.be/DGipNcqlqPc';
+                navigator.clipboard.writeText(url).then(() => {
+                    alert('¡Enlace copiado al portapapeles! Compártelo con tus amigos.');
+                });
+            }
+        }
+        
+        // Smooth scrolling para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Animaciones al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+        
+        // Observar elementos para animaciones
+        document.querySelectorAll('.fade-in, .slide-in').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Efecto de particles en el hero
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.style.position = 'absolute';
+            particle.style.width = '4px';
+            particle.style.height = '4px';
+            particle.style.backgroundColor = 'rgba(59, 130, 246, 0.6)';
+            particle.style.borderRadius = '50%';
+            particle.style.pointerEvents = 'none';
+            particle.style.left = Math.random() * window.innerWidth + 'px';
+            particle.style.top = window.innerHeight + 'px';
+            particle.style.zIndex = '1';
+            
+            document.body.appendChild(particle);
+            
+            const animation = particle.animate([
+                { transform: 'translateY(0px)', opacity: 1 },
+                { transform: 'translateY(-' + (window.innerHeight + 100) + 'px)', opacity: 0 }
+            ], {
+                duration: Math.random() * 3000 + 2000,
+                easing: 'linear'
+            });
+            
+            animation.onfinish = () => {
+                particle.remove();
+            };
+        }
+        
+        // Crear partículas periódicamente
+        setInterval(createParticle, 300);
+        
+        // Auto-reproducir música después de la primera interacción del usuario
+        document.addEventListener('click', function() {
+            if (!musicPlaying) {
+                backgroundMusic.play().catch(e => {
+                    console.log('Autoplay prevented:', e);
+                });
+                musicIcon.className = 'fas fa-volume-up text-white text-xl';
+                musicPlaying = true;
+            }
+        }, { once: true });
+        
+        // Animación del contador
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stats-counter');
+            counters.forEach(counter => {
+                const target = counter.textContent;
+                const numericValue = parseInt(target.replace(/[^\d]/g, ''));
+                const suffix = target.replace(/[\d]/g, '');
+                let current = 0;
+                const increment = numericValue / 100;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= numericValue) {
+                        counter.textContent = numericValue + suffix;
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.floor(current) + suffix;
+                    }
+                }, 20);
+            });
+        }
+        
+        // Ejecutar animación de contadores cuando sea visible
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        document.querySelectorAll('.stats-counter').forEach(counter => {
+            counterObserver.observe(counter.parentElement);
+        });
+    </script>
+</body>
+</html>
